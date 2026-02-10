@@ -1,8 +1,6 @@
 # TOPSIS-Based Evaluation of Conversational AI Models
 
-This project applies the **TOPSIS (Technique for Order Preference by Similarity to Ideal Solution)** method to evaluate and rank pre-trained conversational AI models using multiple performance criteria.
-
-The objective is to identify the best conversational model based on quantitative and qualitative metrics.
+This project applies the TOPSIS (Technique for Order Preference by Similarity to Ideal Solution) method to rank pre-trained conversational AI models based on multiple evaluation criteria.
 
 ---
 
@@ -14,25 +12,24 @@ data/conversational_models.csv
 
 **Columns**
 
-- `Model` – Name of the conversational model  
-- `Accuracy` – Response accuracy score  
-- `Speed_Score` – Inference speed score  
-- `Memory_Usage` – Memory consumption (lower is better)  
-- `Human_Score` – Human-likeness rating  
+- `Model`
+- `Accuracy`
+- `Speed_Score`
+- `Memory_Usage`
+- `Human_Score`
 
 ---
 
 ## Methodology
 
-The TOPSIS method is applied using the following steps:
+The TOPSIS method is implemented using the following steps:
 
-1. Construction of the decision matrix  
-2. Normalization of criteria values  
-3. Weight assignment to each criterion  
-4. Identification of ideal best and ideal worst solutions  
-5. Distance calculation from ideal solutions  
-6. Computation of TOPSIS scores  
-7. Final ranking of models  
+1. Normalization of the decision matrix  
+2. Assignment of weights to criteria  
+3. Identification of ideal best and ideal worst solutions  
+4. Calculation of distance from ideal solutions  
+5. Computation of TOPSIS score  
+6. Ranking of conversational models  
 
 **Weights Used**
 
@@ -41,7 +38,7 @@ The TOPSIS method is applied using the following steps:
 - Memory Usage: 0.20  
 - Human Score: 0.25  
 
-*Memory Usage is treated as a cost criterion.*
+Memory usage is treated as a **cost criterion**.
 
 ---
 
@@ -67,15 +64,5 @@ The following bar chart shows the TOPSIS scores of all conversational models.
 A higher score indicates a better-performing model.
 
 <p align="center">
-  <img src="results/graphs.png" alt="TOPSIS Scores" width="700">
+  <img src="results/graphs.png" alt="TOPSIS Scores" width="750">
 </p>
-
----
-
-## How to Run
-
-1. Install dependencies:
-
-```powershell
-pip install -r requirements.txt
-
