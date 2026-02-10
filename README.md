@@ -1,50 +1,74 @@
-# TOPSIS Conversational Models — Results
+# TOPSIS Conversational Models — Ranking Results
 
 ## Overview
-This project ranks conversational models using the TOPSIS multi-criteria decision-making method and saves results and visualizations in the `results/` folder.
+This project ranks five conversational models using the TOPSIS multi-criteria decision-making method.
 
-## Dataset
-- Input file: data/conversational_models.csv
-- Columns: `Model`, `Accuracy`, `Speed_Score`, `Memory_Usage`, `Human_Score`
+---
 
-## Method
-- Normalize criteria, apply weights, compute ideal best/worst, and calculate TOPSIS scores and ranks.
-- Weights used: Accuracy 0.3, Speed 0.25, Memory 0.2, Human 0.25
-- Memory_Usage is treated as a cost criterion.
+## Input Data
 
-## Results (TOPSIS Scores)
-| Rank | Model     | TOPSIS Score |
-|------|-----------|--------------|
-| 1    | DialoGPT  | 0.824146     |
-| 2    | GPT-2     | 0.773105     |
-| 3    | Godel     | 0.708741     |
-| 4    | Blenderbot| 0.563114     |
-| 5    | LLaMA-2   | 0.226895     |
+**Models Evaluated**
+- DialoGPT
+- Blenderbot
+- Godel
+- GPT-2
+- LLaMA-2
 
-Full CSV of results: [results/rankings.csv](results/rankings.csv)
+**Criteria**
+- `Model` — Model name
+- `Accuracy` — Model accuracy score
+- `Speed_Score` — Speed of response
+- `Memory_Usage` — Memory consumption (in MB)
+- `Human_Score` — Human evaluation score
+
+Input file: [data/conversational_models.csv](data/conversational_models.csv)
+
+---
+
+## Methodology
+
+The TOPSIS method ranks alternatives using these steps:
+
+1. **Normalization** — Normalize the decision matrix
+2. **Weighting** — Apply criteria weights
+3. **Ideal Points** — Find ideal best and worst solutions
+4. **Distance** — Calculate distance from ideal solutions
+5. **TOPSIS Score** — Compute preference scores
+6. **Ranking** — Rank models by score (higher = better)
+
+**Weights Used**
+- Accuracy: 0.30
+- Speed Score: 0.25
+- Memory Usage: 0.20
+- Human Score: 0.25
+
+*Note: Memory Usage is treated as a **cost criterion** (lower is better).*
+
+---
+
+## Results
+
+| Rank | Model | TOPSIS Score |
+|------|-------|--------------|
+| 1 | DialoGPT | 0.824146 |
+| 2 | GPT-2 | 0.773105 |
+| 3 | Godel | 0.708741 |
+| 4 | Blenderbot | 0.563114 |
+| 5 | LLaMA-2 | 0.226895 |
+
+Full results: [results/rankings.csv](results/rankings.csv)
+
+---
 
 ## Visualization
-Bar chart of TOPSIS scores:
 
-![TOPSIS Scores](results/graphs.png)
+**TOPSIS Scores — Bar Chart**
 
-## How to reproduce
-1. Create a virtual environment and install dependencies:
+![TOPSIS Results](results/graphs.png)
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1    # or use .venv\Scripts\python directly
-pip install -r requirements.txt
-```
+---
 
-2. Run the script:
-
-```powershell
-.venv\Scripts\python code\topsis.py
-```
-
-Outputs will be written to:
-- [data/conversational_models.csv](data/conversational_models.csv)
-- [results/rankings.csv](results/rankings.csv)
-- [results/graphs.png](results/graphs.png)
-
+**Outputs:**
+- `data/conversational_models.csv` — Input data
+- `results/rankings.csv` — TOPSIS results
+- `results/graphs.png` — Bar chart visualization
