@@ -56,7 +56,7 @@ The TOPSIS method ranks alternatives using these steps:
 | 4 | Blenderbot | 0.563114 |
 | 5 | LLaMA-2 | 0.226895 |
 
-Full results: [results/rankings.csv](results/rankings.csv)
+Full results: [results/rankings.csv](rankings.csv)
 
 ---
 
@@ -64,7 +64,7 @@ Full results: [results/rankings.csv](results/rankings.csv)
 
 **TOPSIS Scores — Bar Chart**
 
-![TOPSIS Results](results/graphs.png)
+![TOPSIS Results](graphs.png)
 
 ---
 
@@ -72,3 +72,4 @@ Full results: [results/rankings.csv](results/rankings.csv)
 - `data/conversational_models.csv` — Input data
 - `results/rankings.csv` — TOPSIS results
 - `results/graphs.png` — Bar chart visualization
+
