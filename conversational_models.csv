@@ -1,0 +1,6 @@
+Model,Accuracy,Speed_Score,Memory_Usage,Human_Score
+DialoGPT,0.82,0.9,450,7
+Blenderbot,0.92,0.5,1100,9
+Godel,0.88,0.7,850,8
+GPT-2,0.75,0.95,350,6
+LLaMA-2,0.95,0.3,2500,9
